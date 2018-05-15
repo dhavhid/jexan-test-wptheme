@@ -1,0 +1,15 @@
+{
+  "name": "jexantheme",
+  "version": "1.0.0",
+  "description": "A Wordpress theme built to complete a coding test for Jexan Company.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jexan",
+    "wordpress"
+  ],
+  "author": "David I. Martinez",
+  "license": "ISC"
+}
