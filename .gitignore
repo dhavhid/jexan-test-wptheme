@@ -3,6 +3,7 @@
 *.log
 ehthumbs.db
 Thumbs.db
+package-lock.json
 
 # ignore packaged files
 *.7z
