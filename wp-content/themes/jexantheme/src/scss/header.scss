@@ -1,0 +1,81 @@
+.header {
+    height: 80px;
+    line-height: 80px;
+    .header-top-menu {
+        a {
+            color: $header-menu-link-color;
+            font-weight: bold;
+            font-size: $header-menu-link-size;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 5px;
+        }
+        li {
+            display: inline-block;
+            list-style: none;
+            &:after {
+                content: "|";
+                color: $header-menu-link-separator-color;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            &:last-child:after {
+                content: "";
+            }
+            &.current-menu-item {
+                a {
+                    border-bottom: 4px solid $header-menu-link-active-bottom;
+                }
+            }
+        }    
+    }
+}
+.banner {
+    position: relative;
+
+    & > div {
+        color: $header-banner-color;
+        height: $header-banner-heigth;
+        overflow: hidden;
+        width: 100%;
+        img {
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            min-height: 100%;
+            min-width: 100%;
+            position: absolute;
+        }
+        .boxtitle {
+            border: $header-banner-boxtitle-border;
+            left: 25%;
+            margin: 0px;
+            padding: 0px;
+            position: absolute;
+            top: 85%;
+            vertical-align: top;
+            width: 50%;
+
+            div {
+                height: 100%;
+                padding: 15px 30px;
+                text-align: center;
+                line-height: 100%;
+                width: 100%;
+
+                &.thetitle {
+                    background-color: rgba(0, 0, 0, 0.4);
+                }
+            }
+
+            h1, h2, h3 {
+                display: inline-block;
+                margin: 0px;
+                margin-left: 10px;
+            }
+            h1:first-child {
+                margin-left: 0px;
+            }
+        }
+    }
+}

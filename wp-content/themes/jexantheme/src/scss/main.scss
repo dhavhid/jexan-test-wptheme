@@ -1,0 +1,35 @@
+/* Main scss file. Here we import the rest of the styles */
+
+@import '../../node_modules/bootstrap/scss/bootstrap-grid';
+@import '../../node_modules/bootstrap/scss/bootstrap-reboot';
+
+@import 'variables';
+@import 'header';
+@import 'about';
+@import 'campaign';
+@import 'footer';
+
+body {
+    font-family: $font-base-family;
+    margin: 0px;
+}
+.strikethrough {
+    position: relative;
+    z-index: 1;
+    &:before {
+        border-top: 2px solid #ffffff;
+        content:"";
+        margin: 0 auto;
+        position: absolute;
+        top: 50%; left: 0; right: 0; bottom: 0;
+        width: 100%;
+        z-index: -1;
+    }
+    span {
+        background: #fff; 
+        padding: 0 15px; 
+    }
+}
+.alignleft {
+    float: left;
+}

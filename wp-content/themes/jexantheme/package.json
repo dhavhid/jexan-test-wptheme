@@ -16,6 +16,7 @@
     "bootstrap": "^4.1.1"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
