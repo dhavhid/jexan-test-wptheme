@@ -22,19 +22,6 @@ Templates
 The front page template is a regular full-width content page. You can find the source code under front-page.php
 
 
-Shortcodes
-----------
-
-**Latest Blog Posts**
-
-To add a 3-column row of the latest blog posts, use:
-
-  `[latestposts]`
-
-To change the section heading from the default 'Latest posts from the blog', pass in a title="" parameter:
-
-`[latestposts title="Recent Posts"]`
-
 Database
 --------
 
