@@ -1,10 +1,19 @@
 /* Common use variables */
 $font-base-family: 'Roboto', sans-serif;
+$font-base-size: 50%;
+$btn-font-color: #ffffff;
+$btn-background-red: #e9223e;
+$btn-background-blue: #3972e7;
 /* Top menu variables */
+$header-nav-height-desktop: 80px;
+$header-nav-height-mobile: 80px;
+$header-nav-background: rgba(255, 255, 255, 0.95);
 $header-menu-link-color: #124487;
-$header-menu-link-size: 20px;
+$header-menu-link-size: 2;
 $header-menu-link-separator-color: #999999;
 $header-menu-link-active-bottom: #e9223e;
 $header-banner-color: #ffffff;
-$header-banner-heigth: 430px;
+$header-banner-heigth-desktop: 430px;
+$header-banner-height-tablet: 430px;
+$header-banner-height-mobile: 430px;
 $header-banner-boxtitle-border: 3px solid #ffffff;

@@ -9,27 +9,32 @@
         <link rel="stylesheet" type="text/css" media="screen" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/main.min.css" />
     </head>
     <body>
-        <section>
-            <div class="container">
-                <div class="header">
-                    <div class="row">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-5">
-                            <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'container_class' => 'header-top-menu' ) ); ?>
+        <header>
+            <div>
+                <div class="container-fluid">
+                    <div class="header">
+                        <div class="row">
+                            <div class="col-3 col-md-2 text-right">
+                                <a href="/" title="The J">
+                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png" alt="The J">
+                                </a>    
+                            </div>
+                            <div class="col-3 col-md-6">
+                                <?php jexan_wp_nav_menu(); ?>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <a href="<?php the_field('header_donate_link'); ?>" target="_blank" title="Donate" class="btn btn-red shadow-rb">Donate</a>
+                                <a href="<?php the_field('header_fullsite_link'); ?>" target="_blank" title="Main Site" class="btn btn-blue shadow-rb">Main Site</a>
+                            </div>
                         </div>
-                        <div class="col-sm-4">
-                            <!--<input type="button" class="btn btn-red" value="DONATE">
-                            <input type="button" class="btn btn-sky-blue" value="MAIN SITE">-->
-                        </div>
-                    </div>
-                </div>    
-            </div>
-        </section>
+                    </div>    
+                </div>
+            </div>    
+        </header>
         <section>
             <div class="banner">
+                <?php jexan_create_responsive_image('top_header_banner'); ?>
                 <div>
-                    <?php jexan_create_responsive_image('top_header_banner'); ?>
-
                     <div class="boxtitle">
                         <div class="thetitle"><?php the_field('top_header_title'); ?></div>
                         <div class="theheadline"><?php the_field('top_header_headline'); ?></div>

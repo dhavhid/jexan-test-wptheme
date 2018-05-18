@@ -2,16 +2,24 @@
 
 @import '../../node_modules/bootstrap/scss/bootstrap-grid';
 @import '../../node_modules/bootstrap/scss/bootstrap-reboot';
+@import '../../node_modules/bootstrap/scss/utilities';
+@import '../../node_modules/bootstrap/scss/type';
 
+@import 'mixins';
 @import 'variables';
 @import 'header';
 @import 'about';
 @import 'campaign';
 @import 'footer';
 
+html {
+    font-size: $font-base-size;
+}
+
 body {
     font-family: $font-base-family;
     margin: 0px;
+    margin-top: $header-nav-height-desktop;
 }
 .strikethrough {
     position: relative;
@@ -32,4 +40,33 @@ body {
 }
 .alignleft {
     float: left;
+}
+
+a, input[type="button"] {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+    &:first-child {
+        margin-right: 10px;
+    }
+    &.btn {
+        border: 0px none transparent;
+        color: $btn-font-color;
+        @include font-size(2.1);
+        padding: 15px 20px;
+        text-align: center;
+    }
+    &.btn-red {
+        background-color: $btn-background-red;
+    }
+    &.btn-blue {
+        background-color: $btn-background-blue;
+    }   
+}    
+.shadow-rb {
+    @include box-shadow-right-bottom();
+}
+.shadow-rlb {
+    @include box-shadow-right-left-bottom
 }

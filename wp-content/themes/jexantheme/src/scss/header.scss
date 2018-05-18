@@ -1,11 +1,21 @@
-.header {
-    height: 80px;
-    line-height: 80px;
+header {
+    background-color: $header-nav-background;
+    height: $header-nav-height-mobile;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 10001;
+    & > div {
+        line-height: $header-nav-height-mobile;
+        overflow: hidden;
+        width: 100%;
+    }
     .header-top-menu {
         a {
             color: $header-menu-link-color;
             font-weight: bold;
-            font-size: $header-menu-link-size;
+            @include font-size($header-menu-link-size);
             text-transform: uppercase;
             text-decoration: none;
             padding: 5px;
@@ -16,8 +26,9 @@
             &:after {
                 content: "|";
                 color: $header-menu-link-separator-color;
-                margin-left: 20px;
-                margin-right: 20px;
+                @include font-size($header-menu-link-size);
+                margin-left: 15px;
+                margin-right: 15px;
             }
             &:last-child:after {
                 content: "";
@@ -32,20 +43,25 @@
 }
 .banner {
     position: relative;
+    height: $header-banner-height-mobile;
+        overflow: hidden;
+        width: 100%;
+
+    img {
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        min-height: 100%;
+        min-width: 100%;
+        position: absolute;
+    }
 
     & > div {
         color: $header-banner-color;
-        height: $header-banner-heigth;
+        height: $header-banner-height-mobile;
         overflow: hidden;
         width: 100%;
-        img {
-            left: 50%;
-            top: 50%;
-            transform: translateX(-50%) translateY(-50%);
-            min-height: 100%;
-            min-width: 100%;
-            position: absolute;
-        }
+        
         .boxtitle {
             border: $header-banner-boxtitle-border;
             left: 25%;
@@ -77,5 +93,13 @@
                 margin-left: 0px;
             }
         }
+    }
+}
+.mobile-menu {
+    line-height: $header-nav-height-desktop;
+    select {
+        @include font-size(2);
+        height: 30px;
+        width: 100%;
     }
 }
