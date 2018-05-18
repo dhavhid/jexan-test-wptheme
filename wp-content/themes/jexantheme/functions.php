@@ -16,16 +16,20 @@ function jexan_register_header_menu() {
 }
 add_action( 'init', 'jexan_register_header_menu' );
 
-function jexan_wp_nav_menu() {
+function jexan_wp_nav_desktop_menu() {
     wp_nav_menu( array(
         'theme_location' => 'header-menu', 
         'container_class' => 'header-top-menu d-none d-md-block'
     ) );
-    wp_nav_menu( array(
+    /*wp_nav_menu( array(
 		'theme_location' => 'header-menu',
 		'walker'         => new Walker_Nav_Menu_Dropdown(),
 		'items_wrap'     => '<div class="mobile-menu d-block d-sm-block d-md-none"><form><select onchange="if (this.value) window.location.href=this.value">%3$s</select></form></div>',
-	) );
+	) );*/
+}
+
+function jexan_wp_nav_mobile_menu() {
+
 }
 
 /**
@@ -93,6 +97,8 @@ function jexan_shortcode_boxcontent( $atts = null, $content ) {
         'float'   => 'left',
     ), $atts);
 
-    return "<div class='boxcontent' style='background-color: {$a['bgcolor']}; color: {$a['color']};'>{$content}</div>";
+    //$content = preg_replace('/^(\<p>\<\/p>)$/gi', '', $content);
+
+    return "<div class='boxcontent float-{$a['float']}' style='background-color: {$a['bgcolor']}; color: {$a['color']};'>{$content}</div><div class='clearfix'></div>";
 }
 add_shortcode( 'boxcontent', 'jexan_shortcode_boxcontent' );

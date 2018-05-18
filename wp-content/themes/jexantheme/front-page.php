@@ -6,14 +6,14 @@
 get_header();
 ?>
         <section style="background-color: <?php the_field('about_background_color');?>; color: <?php the_field('about_font_color'); ?>;">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="about">
                     <div class="row">
                         <div class="offset-1 col-10"><?php the_field('about_content'); ?></div>
                     </div>
                 </div>
             </div>
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/about-video.png">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/about-video.png" class="img-fluid">
         </section>
         <section>
             <div class="container">

@@ -19,12 +19,23 @@
                                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png" alt="The J">
                                 </a>    
                             </div>
-                            <div class="col-3 col-md-6">
-                                <?php jexan_wp_nav_menu(); ?>
+                            <div class="col-6 col-md-6 text-left">                                
+                                <?php jexan_wp_nav_desktop_menu(); ?>
                             </div>
-                            <div class="col-6 col-md-4">
-                                <a href="<?php the_field('header_donate_link'); ?>" target="_blank" title="Donate" class="btn btn-red shadow-rb">Donate</a>
-                                <a href="<?php the_field('header_fullsite_link'); ?>" target="_blank" title="Main Site" class="btn btn-blue shadow-rb">Main Site</a>
+                            <div class="col-3 col-md-4">
+                                <div class="d-block d-md-none">
+                                    <div id="menuToggle">
+                                        <input type="checkbox" />
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <?php jexan_wp_nav_desktop_menu(); ?>
+                                    </div>
+                                </div>
+                                <div class="d-none d-md-block">
+                                    <a href="<?php the_field('header_donate_link'); ?>" target="_blank" title="Donate" class="btn btn-red shadow-rb" style="margin-right:10px;">Donate</a>
+                                    <a href="<?php the_field('header_fullsite_link'); ?>" target="_blank" title="Main Site" class="btn btn-blue shadow-rb">Main Site</a>
+                                </div>
                             </div>
                         </div>
                     </div>    
@@ -33,12 +44,14 @@
         </header>
         <section>
             <div class="banner">
-                <?php jexan_create_responsive_image('top_header_banner'); ?>
+                <?php jexan_create_responsive_image('top_header_banner'); ?>    
+            </div>
+            <div class="boxcontainer">
                 <div>
                     <div class="boxtitle">
                         <div class="thetitle"><?php the_field('top_header_title'); ?></div>
                         <div class="theheadline"><?php the_field('top_header_headline'); ?></div>
-                    </div>
-                </div>    
+                    </div>   
+                </div>
             </div>
         </section>

@@ -34,7 +34,6 @@ gulp.task('styles', ['cleancss'], function () {
         .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(concat('main.min.css'))
-        /*.pipe(cssmin())*/
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.styles.dest));
 });
@@ -50,8 +49,7 @@ gulp.task('cleanjs', function() {
  * Transpile ES6 into plain javascript. Minify and concat the output javascript
  */
 gulp.task('scripts', ['cleanjs'] ,function () {
-    gulp.src(paths.scripts.src, { sourcemaps: true })
-        .pipe(babel())
+    gulp.src(paths.scripts.src)
         .pipe(uglify())
         .pipe(concat('main.min.js'))
         .pipe(gulp.dest(paths.scripts.dest));
