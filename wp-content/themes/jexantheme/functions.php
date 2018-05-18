@@ -16,21 +16,42 @@ function jexan_register_header_menu() {
 }
 add_action( 'init', 'jexan_register_header_menu' );
 
+/**
+ * Outputs the default main menu on desktop devices
+ *
+ * @return void
+ */
 function jexan_wp_nav_desktop_menu() {
     wp_nav_menu( array(
-        'theme_location' => 'header-menu', 
+        'theme_location'  => 'header-menu', 
         'container_class' => 'header-top-menu d-none d-md-block'
     ) );
-    /*wp_nav_menu( array(
-		'theme_location' => 'header-menu',
-		'walker'         => new Walker_Nav_Menu_Dropdown(),
-		'items_wrap'     => '<div class="mobile-menu d-block d-sm-block d-md-none"><form><select onchange="if (this.value) window.location.href=this.value">%3$s</select></form></div>',
-	) );*/
 }
 
-function jexan_wp_nav_mobile_menu() {
-
+/**
+ * Outputs the default main menu on tablet and mobile devices
+ *
+ * @return void
+ */
+function jexan_wp_nav_mobile_menu( $donate_link, $fullsite_link ) {
+    wp_nav_menu( array(
+        'theme_location'  => 'header-menu', 
+        'container_class' => 'menu-mobile',
+        'container_id'    => 'menu-mobile',
+        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s<li><a href="' . $donate_link . '" target="_blank">Donate</a></li><li><a href="' . $fullsite_link . '" target="_blank">Main Site</a></li></ul>',
+    ) );
 }
+
+/**
+ * Enqueue the main javascript file and the stylesheet
+ *
+ * @return void
+ */
+function jexan_enqueue_scripts() {
+    wp_enqueue_script( 'main_js_script', get_stylesheet_directory_uri() . '/assets/js/main.min.js' );
+    wp_enqueue_style( 'main_css_stylesheet', get_stylesheet_directory_uri() . '/assets/css/main.min.css' );
+}
+add_action( 'wp_enqueue_scripts', 'jexan_enqueue_scripts' );
 
 /**
  * Creates a responsive image using picture

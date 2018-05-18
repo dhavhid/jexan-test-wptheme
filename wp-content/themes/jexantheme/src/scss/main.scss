@@ -25,7 +25,7 @@ body {
     margin: 0px;
     margin-top: $header-nav-height-desktop;
 }
-p {
+.accordion-content, p {
     font-weight: 300;
     @include font-size(2.3);
 }
@@ -118,10 +118,13 @@ section {
     display: block;
     position: absolute;
     top: 25%;
-    left: 60%;
+    left: 40%;
     z-index: 1;
     -webkit-user-select: none;
     user-select: none;
+    @include media-breakpoint-up(sm) {
+        left: 60%;
+    }
     input {
         display: block;
         width: 40px;
@@ -133,7 +136,7 @@ section {
         opacity: 0;
         z-index: 2;
         -webkit-touch-callout: none;
-        &:checked ~ span{
+        /*&:checked ~ span{
             opacity: 1;
             transform: rotate(45deg) translate(-2px, -1px);
             background: #232323;
@@ -144,7 +147,7 @@ section {
         }
         &:checked ~ span:nth-last-child(2){
             transform: rotate(-45deg) translate(0, -1px);
-        }
+        }*/
     }
     span{
         display: block;
@@ -167,6 +170,44 @@ section {
         }
     }
 }
+#menu-mobile {
+    position: absolute;
+    width: 100%;
+    top: $header-nav-height-mobile;
+    left: 0px;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    .menu {
+        display: none;
+        height: 300px;
+    }
+}
+
+#menu-mobile {
+    ul {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 0px;
+        margin: 0px;
+    }
+    li {
+        /*border-bottom: 1px solid #cccccc;*/
+        height: 50px;
+        line-height: 50px; 
+        padding: 0px;
+        padding-right: 20px;
+        font-size: 22px;
+        list-style: none;
+        text-align: right;
+        a {
+            color: $header-menu-link-color;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }    
+}
 
 .accordion {
     h3 {
@@ -182,6 +223,7 @@ section {
             color: $accordion-title-border-color;
             content: "+";
             float: right;
+            line-height: 50%;
         } 
         &.active:after {
             content: "-";

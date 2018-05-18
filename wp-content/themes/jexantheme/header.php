@@ -6,7 +6,8 @@
         <title><?php echo get_bloginfo('name'); ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"> 
-        <link rel="stylesheet" type="text/css" media="screen" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/main.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <?php wp_head(); ?>
     </head>
     <body>
         <header>
@@ -19,17 +20,16 @@
                                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png" alt="The J">
                                 </a>    
                             </div>
-                            <div class="col-6 col-md-6 text-left">                                
+                            <div class="col-6 col-md-5 text-left">                                
                                 <?php jexan_wp_nav_desktop_menu(); ?>
                             </div>
-                            <div class="col-3 col-md-4">
+                            <div class="col-3 col-md-5">
                                 <div class="d-block d-md-none">
                                     <div id="menuToggle">
                                         <input type="checkbox" />
                                         <span></span>
                                         <span></span>
                                         <span></span>
-                                        <?php jexan_wp_nav_desktop_menu(); ?>
                                     </div>
                                 </div>
                                 <div class="d-none d-md-block">
@@ -40,7 +40,8 @@
                         </div>
                     </div>    
                 </div>
-            </div>    
+                <?php jexan_wp_nav_mobile_menu( get_field('header_donate_link'), get_field('header_fullsite_link') ); ?>
+            </div>
         </header>
         <section>
             <div class="banner">

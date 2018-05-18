@@ -13,7 +13,12 @@ get_header();
                     </div>
                 </div>
             </div>
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/about-video.png" class="img-fluid">
+            <div class="video-container">
+                <?php jexan_create_responsive_image('about_video_image'); ?>
+                <div class="video-player" onclick="window.open('<?php the_field('youtube_video_url');?>');">
+                    <img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/play-icon.png" alt="Play">
+                </div>
+            </div>
         </section>
         <section>
             <div class="container">

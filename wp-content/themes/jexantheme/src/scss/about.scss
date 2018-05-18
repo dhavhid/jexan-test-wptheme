@@ -1,5 +1,5 @@
 .about {
-    padding-top: 200px;
+    padding-top: 250px;
     h1 {
         font-weight: bold;
         @include font-size(4);
@@ -31,6 +31,11 @@
             font-style: italic;
             height: 49px;
             padding: 3px 15px;
+            width: 250px;
+
+            @include media-breakpoint-up(md) {
+                width: auto;
+            }
             &.wpcf7-not-valid {
                 border-color: red; 
             }
@@ -39,6 +44,43 @@
             @include font-size(2);
             height: 50px;
             margin: 10px 0px;
+        }
+    }
+}
+.video-container {
+    height: $about-video-container-mobile;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+        height: $about-video-container-desktop;
+    }
+
+    picture img {
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        min-width: 100%;
+        position: absolute;
+    }
+
+    .video-player {
+        cursor: pointer;
+        position: absolute;
+        top: 22%;
+        left: 38%;
+        @include media-breakpoint-up(sm) {
+            left: 40%;
+        }
+        @include media-breakpoint-up(md) {
+            left: 43%;
+        }
+        img {
+            max-width: 200px;
+            @include media-breakpoint-up(md) {
+                max-width: 100%;
+            }
         }
     }
 }

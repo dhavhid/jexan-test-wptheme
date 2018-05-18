@@ -1,6 +1,9 @@
 .campaign {
     padding: 40px 0px;
     h1 {
-        @include font-size(6);
+        @include font-size(4);
+        @include media-breakpoint-up(sm) {
+            @include font-size(6);
+        }
     }
 }

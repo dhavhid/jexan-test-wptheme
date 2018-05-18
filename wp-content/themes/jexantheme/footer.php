@@ -23,7 +23,6 @@
                 </div>
             </div>
         </footer>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/main.min.js"></script>
+        <?php wp_footer(); ?>
     </body>
 </html>
