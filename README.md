@@ -9,7 +9,7 @@ Getting Started
   * [Node.js](http://nodejs.org): Use the installer provided on the NodeJS website.
   * [Gulp](https://gulpjs.com/): Run `[sudo] npm install -g gulp`
 
-To get started run:
+To get started run the following command from the theme directory:
 
 `npm install`
 
